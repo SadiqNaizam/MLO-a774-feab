@@ -52,22 +52,17 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+        // Semantic colors from PRD for easier use in components
+        primaryText: 'hsl(var(--card-foreground))', // Maps to PRD primaryText #212529
+        secondaryText: 'hsl(var(--muted-foreground))', // Maps to PRD secondaryText #878A99
+        accentBlue: 'hsl(var(--primary))' // Maps to PRD accentBlue #00C1D4
 			},
 			borderRadius: {
-				lg: 'var(--radius)',
-				md: 'calc(var(--radius) - 2px)',
-				sm: 'calc(var(--radius) - 4px)'
+				lg: 'var(--radius)', // results in 0.5rem
+				md: 'calc(var(--radius) - 2px)', // results in 0.375rem (6px) - matching Tailwind's 'md'
+				sm: 'calc(var(--radius) - 4px)' // results in 0.25rem (4px) - matching Tailwind's 'sm'
 			},
+      // No specific fontFamily extension needed as PRD specifies "sans-serif", covered by Tailwind defaults.
 			keyframes: {
 				'accordion-down': {
 					from: {
